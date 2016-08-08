@@ -37,10 +37,6 @@ var config = {
 			position: 'top_left'
 		},
 		{
-			module: 'compliments',
-			position: 'lower_third'
-		},
-		{
 			module: 'jarvis'
 		},
 		{
