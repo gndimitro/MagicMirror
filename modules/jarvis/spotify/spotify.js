@@ -1,3 +1,10 @@
+/* Magic Mirror
+ * Module: Jarvis - Spotify functions
+ * 
+ * By George Dimitrov http://georgendimitrov.com
+ * MIT Licensed.
+ */
+
 var audio = new Audio();
 
 function searchTracks(query) {
