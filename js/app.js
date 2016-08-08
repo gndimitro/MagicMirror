@@ -126,14 +126,7 @@ var App = function() {
 
 			loadModules(modules);
 
-			for (var h in nodeHelpers) {
-				var nodeHelper = nodeHelpers[h];
-				nodeHelper.setExpressApp(app);
-				nodeHelper.setSocketIO(io);
-				nodeHelper.start();
-			}
-
-			/*var server = new Server(config, function(app, io) {
+			var server = new Server(config, function(app, io) {
 				console.log("Server started ...");
 
 				for (var h in nodeHelpers) {
@@ -149,7 +142,7 @@ var App = function() {
 					callback(config);
 				}
 
-			});*/
+			});
 		});
 	};
 };
