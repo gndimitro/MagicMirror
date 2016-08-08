@@ -57,9 +57,9 @@ var config = {
 			position: 'top_right',
 			header: 'Weather Forecast',
 			config: {
-	            location: 'Calgary,CA',
+				location: 'Calgary,CA',
 				locationID: '5913490',
-	            appid: 'b7810d0b3fd8505367e5a20a3897b72c'
+				appid: 'b7810d0b3fd8505367e5a20a3897b72c'
 			}
 		},
 		{
