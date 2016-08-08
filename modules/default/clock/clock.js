@@ -8,7 +8,7 @@
 Module.register("clock",{
 	// Module config defaults.
 	defaults: {
-		displayType: 'digital', // options: digital, analog, both
+		displayType: 'analog', // options: digital, analog, both
 
 		timeFormat: config.timeFormat,
 		displaySeconds: true,
@@ -215,7 +215,7 @@ Module.register("clock",{
 					wrapper.appendChild(digitalWrapper);
 				} else {
 					analogWrapper.style.padding = "20px 0 0 0";
-					wrapper.appendChild(digitalWrapper);					
+					wrapper.appendChild(digitalWrapper);
 					wrapper.appendChild(analogWrapper);
 				}
 			}
