@@ -26,7 +26,8 @@ Module.register("jarvis", {
         if (annyang) {
           // Let's define a command.
           var commands = {
-            'hello (*name)': this.hello
+            'hello (*name)': this.hello,
+            ''
           };
 
           // Add our commands to annyang
@@ -35,11 +36,6 @@ Module.register("jarvis", {
           // Start listening
           annyang.start();
     }
-
-    this.test = "yolo";
-
-    Log.info(this.config.assistantVoice);
-    Log.info(this.config.assistantName);
 
     // Setting voice default
     responsiveVoice.setDefaultVoice(this.config.assistantVoice);
