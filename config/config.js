@@ -5,7 +5,7 @@
  */
 
 var config = {
-	port: 8080,
+	port: process.env.port || 8080,
 
 	language: 'en',
 	timeFormat: 24,
