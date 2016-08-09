@@ -17,7 +17,7 @@ Module.register("jarvis", {
   // Required Scripts
   getScripts: function() {
 		return ["annyang.js",
-            "http://code.responsivevoice.org/responsivevoice.js",
+            "https://code.responsivevoice.org/responsivevoice.js",
             "https://code.jquery.com/jquery-3.1.0.min.js",
             this.file("spotify/spotify.js")];
 	},
