@@ -33,6 +33,24 @@ Module.register("jarvis", {
 
             'hey (*name)': this.hello,
 
+            'hide hello world': function() {
+              MM.getModules().withClass('helloworld').enumerate(function(module) {
+                  module.hide(1000, function() {
+                      //Module hidden.
+                  });
+                }
+              );
+            },
+
+            'show hello world': function() {
+              MM.getModules().withClass('helloworld').enumerate(function(module) {
+                  module.show(1000, function() {
+                      //Module shown.
+                  });
+                }
+              );
+            },
+
             '(Jarvis) play my jam': function() {
                 playSong('Love Yourself','Justin Bieber');
             },
@@ -75,6 +93,12 @@ Module.register("jarvis", {
     // Setting voice default
     responsiveVoice.setDefaultVoice(this.config.assistantVoice);
   },
+
+  notificationReceived: function(notification, payload, sender) {
+        if (notification === 'DOM_OBJECTS_CREATED') {
+            Log.info("Everything loaded");
+            }
+    },
 
   hello: function(name) {
     annyang.pause();
