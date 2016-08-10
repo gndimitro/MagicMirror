@@ -30,8 +30,7 @@ Module.register("jarvis", {
 		return [this.file("annyang/annyang.min.js"),
             "https://code.responsivevoice.org/responsivevoice.js",
             "https://code.jquery.com/jquery-3.1.0.min.js",
-            this.file("spotify/spotify.js"),
-            this.file("jarvis_helper.js")];
+            this.file("spotify/spotify.js")];
 	},
 
   start: function() {
