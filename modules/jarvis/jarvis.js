@@ -78,7 +78,9 @@ Module.register("jarvis", {
         },
 
         '*nomatch': function () {
+          annyang.pause();
           responsiveVoice.speak("I did not understand the command, please repeat...");
+          annyang.resume();
         }
       };
 
