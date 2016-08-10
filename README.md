@@ -1,19 +1,19 @@
-I forked the MagicMirror repository and started working on my own version building up from it. Currently it is live on heroku at: https://smart-mirror-jarvis.herokuapp.com/. There is an issue with the weather module at the time of writing this. Since the weather module uses open weather over HTTP instead of HTTPS, heroku blocks the request out so the weather module unfortunately does not function as it normally would while running the application locally. I'm looking to use a free API that allows communication over HTTPS and will fix the weather module shortly.
-
-If you wish to test the Jarvis plugin you'll need google chrome and to allow microphone access. A list of commands can be found [here](modules/jarvis/README.md#commands).
-
-Below this is the original MagicMirror readme to be used as a personal reference in the future as I need it and is left for public knowledge as well.
-
 ![MagicMirror²: The open source modular smart mirror platform. ](.github/header.png)
 
 <p align="center">
-	<a href="https://david-dm.org/MichMich/MagicMirror"><img src="https://david-dm.org/MichMich/MagicMirror.svg" alt="Dependency Status"></a>
-	<a href="https://david-dm.org/MichMich/MagicMirror#info=devDependencies"><img src="https://david-dm.org/MichMich/MagicMirror/dev-status.svg" alt="devDependency Status"></a>
+	<a href="https://david-dm.org/gndimitro/MagicMirror" title="dependencies status"><img src="https://david-dm.org/gndimitro/MagicMirror/status.svg"/></a>
+	<a href="https://david-dm.org/gndimitro/MagicMirror?type=dev" title="devDependencies status"><img src="https://david-dm.org/gndimitro/MagicMirror/dev-status.svg"/></a>
 	<a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-v5.10.1-brightgreen.svg" alt="Node Version"></a>
 	<a href="http://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 	<a href="https://travis-ci.org/gndimitro/MagicMirrorr"><img src="https://travis-ci.org/gndimitro/MagicMirror.svg?branch=master" alt="Travis"></a>
 	<a href="https://snyk.io/test/github/gndimitro/magicmirror"><img src="https://snyk.io/test/github/gndimitro/magicmirror/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/gndimitro/magicmirror" style="max-width:100%;"></a>
 </p>
+
+I forked the MagicMirror repository and started working on my own version building up from it. Currently it is live on heroku at: https://smart-mirror-jarvis.herokuapp.com/. There is an issue with the weather module at the time of writing this. Since the weather module uses open weather over HTTP instead of HTTPS, heroku blocks the request out so the weather module unfortunately does not function as it normally would while running the application locally. I'm looking to use a free API that allows communication over HTTPS and will fix the weather module shortly.
+
+If you wish to test the Jarvis plugin you'll need google chrome and to allow microphone access. A list of commands can be found [here](modules/jarvis/README.md#commands).
+
+Below this is the original MagicMirror readme to be used as a personal reference in the future as I need it and is left for public knowledge as well.
 
 **MagicMirror²** is an open source modular smart mirror platform. With a growing list of installable modules, the **MagicMirror²** allows you to convert your hallway or bathroom mirror into your personal assistant. **MagicMirror²** is built by the creator of [the original MagicMirror](http://michaelteeuw.nl/tagged/magicmirror) with the incredible help of a [growing community of contributors](https://github.com/MichMich/MagicMirror/graphs/contributors).
 
