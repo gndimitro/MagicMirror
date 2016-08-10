@@ -39,8 +39,8 @@ Module.register("jarvis", {
       var commands = {
         'hey (*name)': this.hello,
 
-        'hide :moduleName': function(moduleName) {
-          moduleName.replace(/ /g,'');
+        'hide *moduleName': function(moduleName) {
+          moduleName = moduleName.replace(/ /g,"");
           MM.getModules().withClass(moduleName).enumerate(function(module) {
               module.hide(1000, function() {
                   //Module hidden.
@@ -49,8 +49,8 @@ Module.register("jarvis", {
           );
         },
 
-        'show :moduleName': function(moduleName) {
-          moduleName.replace(/ /g,'');
+        'show *moduleName': function(moduleName) {
+          moduleName = moduleName.replace(/ /g,"");
           MM.getModules().withClass(moduleName).enumerate(function(module) {
               module.show(1000, function() {
                   //Module shown.
