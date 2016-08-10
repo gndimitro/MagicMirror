@@ -5,7 +5,7 @@
 	<a href="https://david-dm.org/gndimitro/MagicMirror?type=dev" title="devDependencies status"><img src="https://david-dm.org/gndimitro/MagicMirror/dev-status.svg"/></a>
 	<a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-v5.10.1-brightgreen.svg" alt="Node Version"></a>
 	<a href="http://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-	<a href="https://travis-ci.org/gndimitro/MagicMirrorr"><img src="https://travis-ci.org/gndimitro/MagicMirror.svg?branch=master" alt="Travis"></a>
+	<a href="https://travis-ci.org/gndimitro/MagicMirror"><img src="https://travis-ci.org/gndimitro/MagicMirror.svg?branch=master" alt="Travis"></a>
 	<a href="https://snyk.io/test/github/gndimitro/magicmirror"><img src="https://snyk.io/test/github/gndimitro/magicmirror/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/gndimitro/magicmirror" style="max-width:100%;"></a>
 </p>
 
