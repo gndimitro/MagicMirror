@@ -1,4 +1,4 @@
-I forked the MagicMirror repository and started working on my own version building up from it. Currently it is live on heroku at: https://smart-mirror-jarvis.herokuapp.com/. There is an issue with the weather module at the time of writing this. Since it uses open weather over HTTP instead of HTTPS heroku blocks the request out so the weather module unfortunately does not function as it would over runnnig the application locally.
+I forked the MagicMirror repository and started working on my own version building up from it. Currently it is live on heroku at: https://smart-mirror-jarvis.herokuapp.com/. There is an issue with the weather module at the time of writing this. Since the weather module uses open weather over HTTP instead of HTTPS, heroku blocks the request out so the weather module unfortunately does not function as it normally would while running the application locally. I'm looking to use a free API that allows communication over HTTPS and will fix the weather module shortly.
 
 If you wish to test the Jarvis plugin you'll need google chrome and to allow microphone access. A list of commands can be found [here](modules/jarvis/README.md#commands).
 
