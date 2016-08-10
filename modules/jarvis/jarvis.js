@@ -26,74 +26,77 @@ Module.register("jarvis", {
 	},
 
   start: function() {
-      Log.info("Starting module: " + this.name);
 
-      assistantName = this.config.assistantName.toLowerCase();
-      myName = this.config.myName.toLowerCase();
+    Log.info("Starting module: " + this.name);
 
-      annyang.debug();
-        if (annyang) {
-          // Let's define a command.
-          var commands = {
-            'hello (*name)': this.hello,
+    assistantName = this.config.assistantName.toLowerCase();
+    myName = this.config.myName.toLowerCase();
 
-            'hey (*name)': this.hello,
+    annyang.debug();
+    if (annyang) {
 
-            'hide hello world': function() {
-              MM.getModules().withClass('helloworld').enumerate(function(module) {
-                  module.hide(1000, function() {
-                      //Module hidden.
-                  });
-                }
-              );
-            },
+      // Set of commands for Jarvis
+      var commands = {
+        'hey (*name)': this.hello,
 
-            'show hello world': function() {
-              MM.getModules().withClass('helloworld').enumerate(function(module) {
-                  module.show(1000, function() {
-                      //Module shown.
-                  });
-                }
-              );
-            },
+        'hide :moduleName': function(moduleName) {
+          moduleName.replace(/ /g,'');
+          MM.getModules().withClass(moduleName).enumerate(function(module) {
+              module.hide(1000, function() {
+                  //Module hidden.
+              });
+            }
+          );
+        },
 
-            '(Jarvis) play my jam': function() {
-                playSong('Love Yourself','Justin Bieber');
-            },
+        'show :moduleName': function(moduleName) {
+          moduleName.replace(/ /g,'');
+          MM.getModules().withClass(moduleName).enumerate(function(module) {
+              module.show(1000, function() {
+                  //Module shown.
+              });
+            }
+          );
+        },
 
-            'stop': function () {
-                audio.pause();
-            },
+        '(Jarvis) play my jam': function() {
+            playSong('Love Yourself','Justin Bieber');
+        },
 
-            'play track *song': function (song) {
-              //recognized('Play track ' + song);
-              playSong(song);
-            },
+        'stop': function () {
+            audio.pause();
+        },
 
-            'play *song by *artist': function(song, artistName) {
-              playSong(song,artistName);
-            },
+        'play track *song': function (song) {
+          //recognized('Play track ' + song);
+          playSong(song);
+        },
 
-            'play song *song': function (song) {
-              recognized('Play song ' + song);
-              playSong(song);
-            },
-            'play *song': function (song) {
-              //recognized('Play ' + song);
-              playSong(song);
-            },
+        'play *song by *artist': function(song, artistName) {
+          playSong(song,artistName);
+        },
 
-            ':nomatch': function (message) {
-              //recognized(message);
-              //communicateAction('Sorry, I don\'t understand this action');
-          }
-        };
+        'play song *song': function (song) {
+          recognized('Play song ' + song);
+          playSong(song);
+        },
 
-          // Add our commands to annyang
-          annyang.addCommands(commands);
+        'play *song': function (song) {
+          //recognized('Play ' + song);
+          playSong(song);
+        },
 
-          // Start listening
-          annyang.start();
+        ':nomatch': function (message) {
+          //recognized(message);
+          //communicateAction('Sorry, I don\'t understand this action');
+        }
+      };
+
+      // Add our commands to annyang
+      annyang.addCommands(commands);
+
+      // Start listening
+      annyang.start();
     }
 
     // Setting voice default
