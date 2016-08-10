@@ -37,7 +37,12 @@ var config = {
 			position: 'top_left'
 		},
 		{
-			module: 'jarvis'
+			module: 'jarvis',
+			config: {
+				assistantVoice: 'UK English Male',
+		    assistantName: 'Jarvis',
+				myName: 'George'
+			}
 		},
 		{
 			module: 'currentweather',

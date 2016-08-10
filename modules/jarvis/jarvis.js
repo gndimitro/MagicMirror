@@ -5,13 +5,16 @@
  * MIT Licensed.
  */
 
-var assistantName = "jarvis"
+var assistantName = ""
+var myName = ""
 
 Module.register("jarvis", {
 
   // Module defaults
   defaults: {
-    assistantVoice: "UK English Male"
+    assistantVoice: "",
+    assistantName: "",
+    myName: ""
   },
 
   // Required Scripts
@@ -24,6 +27,9 @@ Module.register("jarvis", {
 
   start: function() {
       Log.info("Starting module: " + this.name);
+
+      assistantName = this.config.assistantName.toLowerCase();
+      myName = this.config.myName.toLowerCase();
 
       annyang.debug();
         if (annyang) {
@@ -107,11 +113,11 @@ Module.register("jarvis", {
       name = name.trim().toLowerCase();
 
     if(name && (name == assistantName))
-      responsiveVoice.speak("Hello George, how are you my friend?");
+      responsiveVoice.speak("Hello " + myName);
     else {
       responsiveVoice.speak("Hello");
     }
-    Log.info(this.config.name)
+
     annyang.resume();
   }
 });
