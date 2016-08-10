@@ -1,3 +1,9 @@
+I forked the MagicMirror repository and started working on my own version building up from it. Currently it is live on heroku at: https://smart-mirror-jarvis.herokuapp.com/. There is an issue with the weather module at the time of writing this. Since it uses open weather over HTTP instead of HTTPS heroku blocks the request out so the weather module unfortunately does not function as it would over runnnig the application locally.
+
+If you wish to test the Jarvis plugin you'll need google chrome and to allow microphone access. A list of commands can be found [here](modules/jarvis/README.md#commands).
+
+Below this is the original MagicMirror readme to be used as a personal reference in the future as I need it and is left for public knowledge as well.
+
 ![MagicMirror²: The open source modular smart mirror platform. ](.github/header.png)
 
 <p align="center">
