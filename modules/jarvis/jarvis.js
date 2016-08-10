@@ -104,9 +104,9 @@ Module.register("jarvis", {
   },
 
   notificationReceived: function(notification, payload, sender) {
-        if (notification === 'DOM_OBJECTS_CREATED') {
-            Log.info("Everything loaded");
-            }
+    if (notification === 'DOM_OBJECTS_CREATED') {
+        Log.info("Everything loaded");
+        }
     },
 
   hello: function(name) {
