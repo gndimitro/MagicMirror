@@ -31,32 +31,25 @@ Module.register("jarvis", {
 
     assistantName = this.config.assistantName.toLowerCase();
     myName = this.config.myName.toLowerCase();
-
+    var _this = this;
     annyang.debug();
+
     if (annyang) {
 
       // Set of commands for Jarvis
       var commands = {
         'hey (*name)': this.hello,
 
-        'hide *moduleName': function(moduleName) {
-          moduleName = moduleName.replace(/ /g,"");
-          MM.getModules().withClass(moduleName).enumerate(function(module) {
-              module.hide(1000, function() {
-                  //Module hidden.
-              });
-            }
-          );
+        ':assistantName hide (the) *moduleName': this.hideModule,
+
+        'hide (the) *moduleName': function(moduleName) {
+          _this.hideModule(null, moduleName);
         },
 
-        'show *moduleName': function(moduleName) {
-          moduleName = moduleName.replace(/ /g,"");
-          MM.getModules().withClass(moduleName).enumerate(function(module) {
-              module.show(1000, function() {
-                  //Module shown.
-              });
-            }
-          );
+        ':assistantName show (the) *moduleName': this.showModule,
+
+        'show (the) *moduleName': function(moduleName) {
+          _this.showModule(null, moduleName);
         },
 
         '(Jarvis) play my jam': function() {
@@ -77,18 +70,15 @@ Module.register("jarvis", {
         },
 
         'play song *song': function (song) {
-          recognized('Play song ' + song);
           playSong(song);
         },
 
         'play *song': function (song) {
-          //recognized('Play ' + song);
           playSong(song);
         },
 
-        ':nomatch': function (message) {
-          //recognized(message);
-          //communicateAction('Sorry, I don\'t understand this action');
+        '*nomatch': function () {
+          responsiveVoice.speak("I did not understand the command, please repeat...");
         }
       };
 
@@ -103,11 +93,12 @@ Module.register("jarvis", {
     responsiveVoice.setDefaultVoice(this.config.assistantVoice);
   },
 
-  notificationReceived: function(notification, payload, sender) {
+  //Just an example of getting a notification
+  /*notificationReceived: function(notification, payload, sender) {
     if (notification === 'DOM_OBJECTS_CREATED') {
         Log.info("Everything loaded");
         }
-    },
+    },*/
 
   hello: function(name) {
     annyang.pause();
@@ -122,5 +113,31 @@ Module.register("jarvis", {
     }
 
     annyang.resume();
+  },
+
+  hideModule: function(name, moduleName) {
+    if(name && (name.toLowerCase() == assistantName))
+      responsiveVoice.speak("Right away sir");
+
+    moduleName = moduleName.replace(/ /g,"");
+    MM.getModules().withClass(moduleName).enumerate(function(module) {
+        module.hide(1000, function() {
+            //Module hidden.
+        });
+      }
+    );
+  },
+
+  showModule: function(name, moduleName) {
+    if(name && (name.toLowerCase() == assistantName))
+      responsiveVoice.speak("Right away sir");
+
+    moduleName = moduleName.replace(/ /g,"");
+    MM.getModules().withClass(moduleName).enumerate(function(module) {
+        module.show(1000, function() {
+            //Module shown.
+        });
+      }
+    );
   }
 });
