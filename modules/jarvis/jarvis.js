@@ -8,6 +8,14 @@
 var assistantName = ""
 var myName = ""
 
+function waitForJarvis() {
+  //Log.info(responsiveVoice.isPlaying());
+  if(responsiveVoice.isPlaying())
+    window.setTimeout(waitForJarvis,2000);
+  else
+    annyang.resume();
+}
+
 Module.register("jarvis", {
 
   // Module defaults
@@ -22,7 +30,8 @@ Module.register("jarvis", {
 		return [this.file("annyang/annyang.min.js"),
             "https://code.responsivevoice.org/responsivevoice.js",
             "https://code.jquery.com/jquery-3.1.0.min.js",
-            this.file("spotify/spotify.js")];
+            this.file("spotify/spotify.js"),
+            this.file("jarvis_helper.js")];
 	},
 
   start: function() {
@@ -79,8 +88,8 @@ Module.register("jarvis", {
 
         '*nomatch': function () {
           annyang.pause();
+          window.setTimeout(waitForJarvis,6100);
           responsiveVoice.speak("I did not understand the command, please repeat...");
-          annyang.resume();
         }
       };
 
@@ -105,6 +114,8 @@ Module.register("jarvis", {
   hello: function(name) {
     annyang.pause();
 
+    window.setTimeout(waitForJarvis,1000);
+
     if(name)
       name = name.trim().toLowerCase();
 
@@ -113,8 +124,6 @@ Module.register("jarvis", {
     else {
       responsiveVoice.speak("Hello");
     }
-
-    annyang.resume();
   },
 
   hideModule: function(name, moduleName) {
