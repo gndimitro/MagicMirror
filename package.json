@@ -47,7 +47,7 @@
     "request": "^2.74.0",
     "rrule": "latest",
     "snyk": "^1.14.1",
-    "socket.io": "^1.4.6",
+    "socket.io": "^3.0.0",
     "valid-url": "latest",
     "walk": "latest"
   },
